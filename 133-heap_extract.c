@@ -70,6 +70,7 @@ void remover(heap_t *ptr)
 	ptr->left = NULL;
 	ptr->n = 0;
 	free(ptr);
+	ptr = NULL;
 }
 
 /**
@@ -155,6 +156,8 @@ int heap_extract(heap_t **root)
 		;
 	swap = find_right(*root, 1, depth);
 	swaper(swap, r);
-	remover(r);
+	if (depth)
+		remover(r);
+
 	return (hold);
 }
