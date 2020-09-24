@@ -158,6 +158,7 @@ int heap_extract(heap_t **root)
 	swaper(swap, r);
 	if (depth)
 		remover(r);
+	r = NULL;
 
 	return (hold);
 }
